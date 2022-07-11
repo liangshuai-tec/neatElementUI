@@ -3,7 +3,11 @@
         <RenderForm
             :templateData="templateData"
             :buttonsList="buttonsList"
-            >
+            :data="data"
+            @save="saveFunc"
+            @cache="cacheFunc"
+            @cancel="cancelFunc"
+            @reset="resetFunc">
         </RenderForm>
 
 
@@ -51,15 +55,31 @@ export default {
                 {label:"datePicker-type", prop:"datePicker", type:"datePicker", disabled:false, rules:[datePickerRules], required:true, dicCode:"age_eng"},
             ],
             buttonsList:[
+                {type:"save", text:"保存"},
                 {type:"cache", text:"暂存"},
                 {type:"cancel", text:"取消"},
                 {type:"reset", text:"重置"},
-            ]
+            ],
+            data:{inputType1:1111,datePicker:"2022-08-11"}
 
         }
     },
     components:{
         RenderForm
+    },
+    methods:{
+        saveFunc(data){
+            console.log(data)
+        },
+        cacheFunc(data){
+            console.log(data)
+        },
+        cancelFunc(data){
+            console.log(data)
+        },
+        resetFunc(data){
+            console.log(data)
+        },
     }
     
 }

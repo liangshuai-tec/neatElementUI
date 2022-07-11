@@ -128,8 +128,9 @@ export default {
     },
     watch:{
         data:{
-            handler:function(){
-                this.getFormItem();
+            handler:function(newValue){
+                // this.getFormItem();
+                // this.form = newValue;
             }
         }
     },
@@ -165,6 +166,10 @@ export default {
         },
         resetFunc(){
             this.$emit("reset", this.form);
+            this.$refs.form.resetFields();
+            // 调用初始化语句
+            this.getFormItem();
+
         },
         getFormItem(){
             // 暂不处理Boolean
@@ -202,8 +207,6 @@ export default {
             }
             return [map[type]];
         },
-
-
         getDicArr(){
             // 在data中添加属性
             // 在methods里面增加字典获取方法
