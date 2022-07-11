@@ -212,7 +212,8 @@ export default {
                     this.addAttrToDicListObj(item.dicCode, idx);
                 }else{
                     // 自带下拉选项
-                    return item.list;
+                    // 设置字典项
+                    this.$set(this.dicListObj, "arr"+idx, item.list);
                 }
             })
         },
