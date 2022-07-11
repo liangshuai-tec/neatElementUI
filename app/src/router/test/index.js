@@ -1,6 +1,7 @@
 import test from '@/views/home/routerView.vue'
 
 const formTest = ()=>import('@/views/test/RenderFormTest.vue')
+const tableTest = ()=>import('@/views/test/RenderTableTest.vue')
 
 export default [
 {
@@ -16,7 +17,17 @@ export default [
                 title:'form列表渲染',
                 isLeaf:'true'
            }
-       }
+       },
+       {
+        path:'/test/tableTest',
+        component:tableTest,
+        name:'tableTest',
+        meta:{
+         //    auth:'true'
+             title:'table列表渲染',
+             isLeaf:'true'
+        }
+    }
     
    ],
    meta:{
