@@ -214,9 +214,12 @@ export default {
                 if(item.type == "select" && item.dicCode){
                     this.addAttrToDicListObj(item.dicCode, idx);
                 }else{
-                    // 自带下拉选项
-                    // 设置字典项
-                    this.$set(this.dicListObj, "arr"+idx, item.list);
+                    if(Array.isArray(item.list) && item.list.length > 0){
+                        // 自带下拉选项
+                        this.$set(this.dicListObj, "arr"+idx, item.list);
+                    }else{
+                        console.error(`select：${item.label}, 缺少下拉选项list或dicCode属性`);
+                    }
                 }
             })
         },
