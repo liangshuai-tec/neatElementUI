@@ -1,11 +1,11 @@
 <template>
-  <div class="home">
+  <div style="height:100%">
     <el-container>
       <el-container>
 
         <!-- <router-view v-if="$store.state.common.refreshRoute"></router-view>         -->
      
-             <router-view ></router-view>        
+            <router-view ></router-view>        
 
       </el-container>
 
