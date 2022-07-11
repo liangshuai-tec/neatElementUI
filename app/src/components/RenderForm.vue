@@ -211,10 +211,10 @@ export default {
             // 在data中添加属性
             // 在methods里面增加字典获取方法
             this.templateData.forEach((item,idx)=>{
-                if(item.type == "select" && item.dicCode){
-                    this.addAttrToDicListObj(item.dicCode, idx);
-                }else{
-                    if(Array.isArray(item.list) && item.list.length > 0){
+                if(item.type == "select"){
+                    if(item.dicCode){
+                        this.addAttrToDicListObj(item.dicCode, idx);
+                    }else if(Array.isArray(item.list) && item.list.length > 0){
                         // 自带下拉选项
                         this.$set(this.dicListObj, "arr"+idx, item.list);
                     }else{
