@@ -36,7 +36,7 @@ export default {
                 {type:"cancel", text:"取消"},
                 {type:"reset", text:"重置"},
             ],
-            multiple:false,
+            multiple:true,
             dataList:[
                 {name:"姓名1", sex:"1", address:"住址1"},
                 {name:"姓名2", sex:"2", address:"住址2"},
