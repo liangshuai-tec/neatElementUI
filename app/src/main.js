@@ -11,6 +11,14 @@ Vue.use(Vuex);
 import '@/util/dialogDrag'
 
  /* eslint-disable */
+import axios from 'axios'
+Vue.prototype.$http = axios
+// 引入mock文件
+import "@/mock/index.js"; // mock 方式，正式发布时，注释掉该处即可
+
+
+
+
 /**忽略eslint**/
 // 重置css
 // import 'minireset.css'
@@ -94,13 +102,3 @@ new Vue({
   store,
   render: h => h(App)
 }).$mount('#app')
-
-/**
-new Vue({
-  el:'#app',
-  router,
-  store,
-  template:'<App/>',
-  components:{ App }
-})
- **/
